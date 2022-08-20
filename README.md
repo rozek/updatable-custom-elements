@@ -8,9 +8,11 @@ partial "hot module replacement" for "Custom Elements"
 
 **NPM users**: please consider the [Github README](https://github.com/rozek/updatable-custom-elements/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
 
+> Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
+
 ## Technical Background ##
 
-In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to understand how it works:
+In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to know how they work:
 
 * when a given class is registered as a "custom element" for the first time, it is registered as usual
 * but whenever a class is registered for an already existing "custom element", `updatable-custom-elements` simply replaces all class and instance properties and methods
@@ -19,7 +21,7 @@ Consequently, **the following details are left untouched**:
 
 1. as the class itself is not changed, its **inheritance chain is kept**,
 2. **the constructor remains unchanged** as well,
-3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** as well
+3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** either
 4. and since the observable attributes seem to be cached as well, **changing the getter for `observedAttributes` has no effect**.
 
 Restrictions 2 and 3 can easily be circumvented by providing redirections in the class implementation:
@@ -52,7 +54,7 @@ class updatableElement extends HTMLElement {
 Additionally, the typical caveats of "hot module replacement" apply here as well:
 
 * since any existing instances of the affected "custom element" are left untouched, their state remains (in fact, this is often a fundamental reason for "hot module replacement")
-* in particular, any already registered event handlers are still present and react on incoming events (you will have to handle this inconvenience yourself, however)
+* in particular, any already registered event handlers are still present and react on incoming events - if you plan to update event handling at runtime, redirects within the registered handlers may help here as well 
 
 If you still want to update "custom elements" at runtime, just read on.
 
