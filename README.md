@@ -10,7 +10,7 @@ partial "hot module replacement" for "Custom Elements"
 
 ## Technical Background ##
 
-In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to understand how it works:
+In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to know how it works:
 
 * when a given class is registered as a "custom element" for the first time, it is registered as usual
 * but whenever a class is registered for an already existing "custom element", `updatable-custom-elements` simply replaces all class and instance properties and methods
