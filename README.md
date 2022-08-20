@@ -1,3 +1,3 @@
 # updatable-custom-elements #
 
-partial "hot reload" mechanism for custom Elements
+partial "hot reloading" for custom Elements
