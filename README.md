@@ -6,6 +6,9 @@ partial "hot module replacement" for "Custom Elements"
 
 `updatable-custom-elements` _partially implements_ "Hot Module Reloading" for "custom elements" with the idea to facilitate development and debugging, but not for module replacement at runtime.
 
+**NPM users**: please consider the [Github README](https://github.com/rozek/updatable-custom-elements/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
+
+## Technical Background ##
 
 
 
