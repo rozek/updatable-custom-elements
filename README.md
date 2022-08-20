@@ -8,6 +8,8 @@ partial "hot module replacement" for "Custom Elements"
 
 **NPM users**: please consider the [Github README](https://github.com/rozek/updatable-custom-elements/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
 
+> Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
+
 ## Technical Background ##
 
 In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to know how it works:
