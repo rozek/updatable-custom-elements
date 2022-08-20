@@ -1,7 +1,7 @@
 ;(function () {
   const customElements_define = customElements.define
   customElements.define = function define (
-    Name:string, Constructor:Function, Options?:any
+    Name:string, Constructor:CustomElementConstructor, Options?:any
   ):void {
     if (customElements.get(Name) == null) {                // not yet registered
       customElements_define.call(customElements, Name,Constructor,Options)
@@ -10,7 +10,9 @@
       removePropertiesFrom(Class, protectedFunctionProps)
       copyPropertiesFrom(Constructor,Class, protectedFunctionProps)
 
+// @ts-ignore "Class" exists
       removePropertiesFrom(Class.prototype, protectedProtoProps)
+// @ts-ignore "Class" exists
       copyPropertiesFrom(Constructor.prototype,Class.prototype, protectedProtoProps)
     }
   }
@@ -45,6 +47,7 @@
     staticProperties.forEach((Name) => {
       if (! (Name in protectedProps)) {
         let Descriptor = Object.getOwnPropertyDescriptor(Constructor,Name)
+// @ts-ignore "Descriptor" exists
         Object.defineProperty(Candidate, Name,Descriptor)
       }
     })
