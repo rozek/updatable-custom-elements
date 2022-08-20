@@ -1,6 +1,6 @@
 {
   "name": "updatable-custom-elements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "partial \"hot module replacement\" for \"Custom Elements\"",
   "type": "module",
   "main": "./dist/updatable-custom-elements.js",
