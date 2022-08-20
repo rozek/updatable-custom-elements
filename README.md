@@ -21,7 +21,7 @@ Consequently, **the following details are left untouched**:
 
 1. as the class itself is not changed, its **inheritance chain is kept**,
 2. **the constructor remains unchanged** as well,
-3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** as well
+3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** either
 4. and since the observable attributes seem to be cached as well, **changing the getter for `observedAttributes` has no effect**.
 
 Restrictions 2 and 3 can easily be circumvented by providing redirections in the class implementation:
