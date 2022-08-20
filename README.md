@@ -54,7 +54,7 @@ class updatableElement extends HTMLElement {
 Additionally, the typical caveats of "hot module replacement" apply here as well:
 
 * since any existing instances of the affected "custom element" are left untouched, their state remains (in fact, this is often a fundamental reason for "hot module replacement")
-* in particular, any already registered event handlers are still present and react on incoming events (you will have to handle this inconvenience yourself, however)
+* in particular, any already registered event handlers are still present and react on incoming events - if you plan to update event handling at runtime, redirects within the registered handlers may help here as well 
 
 If you still want to update "custom elements" at runtime, just read on.
 
