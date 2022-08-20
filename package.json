@@ -1,7 +1,7 @@
 {
   "name": "updatable-custom-elements",
   "version": "0.1.0",
-  "description": "partial \"hot reloading\" for custom Elements",
+  "description": "partial \"hot module replacement\" for \"Custom Elements\"",
   "type": "module",
   "main": "./dist/updatable-custom-elements.js",
   "module": "./dist/updatable-custom-elements.esm.js",
@@ -29,6 +29,7 @@
     "hot-reload",
     "hot-reloading",
     "hot-module-reloading",
+    "hot-module-replacement",
     "custom-elements"
   ],
   "author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
