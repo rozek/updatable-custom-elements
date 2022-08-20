@@ -54,6 +54,30 @@ Additionally, the typical caveats of "hot module replacement" apply here as well
 * since any existing instances of the affected "custom element" are left untouched, their state remains (in fact, this is often a fundamental reason for "hot module replacement")
 * in particular, any already registered event handlers are still present and react on incoming events (you will have to handle this inconvenience yourself, however)
 
+If you still want to update "custom elements" at runtime, just read on.
+
+## Installation ##
+
+`updatable-custom-elements` may be used as an ECMAScript module (ESM) or explicitly loaded by inserting a `<script>` element into the web document.
+
+For the ESM variant, install the package into your build environment using [NPM](https://docs.npmjs.com/) with the command
+
+```
+npm install updatable-custom-elements
+```
+
+and `import` it into your code whereever needed
+
+```javascript
+import "updatable-custom-elements"
+```
+
+Otherwise, load the plain script file directly
+
+```html
+<script src="https://unpkg.com/updatable-custom-elements"></script>
+```
+
 
 
 ## Build Instructions ##
