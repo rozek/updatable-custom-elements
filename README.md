@@ -10,6 +10,44 @@ partial "hot module replacement" for "Custom Elements"
 
 ## Technical Background ##
 
+In order to understand the benefits and limitations of `updatable-custom-elements`, it is important to understand how it works:
+
+* when a given class is registered as a "custom element" for the first time, it is registered as usual
+* but whenever a class is registered for an already existing "custom element", `updatable-custom-elements` simply replaces all class and instance properties and methods
+
+Consequently, **the following details are left untouched**:
+
+1. as the class itself is not changed, its **inheritance chain is kept**,
+2. **the constructor remains unchanged** as well,
+3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** as well
+4. and since the observable attributes seem to be cached as well, **changing the getter for `observedAttributes` has no effect**.
+
+Restrictions 2 and 3 can easily be circumvented by providing redirections:
+
+```
+class updatableElement extends HTMLElement {
+  constructor () {
+    super()
+    this.initialize()
+  }
+  
+  connectedCallback ()    { this.onConnect() }
+  disconnectedCallback () { this.onDisconnect() }
+  adoptedCallback ()      { this.onAdopt() }
+
+  attributeChangedCallback (Name, oldValue, newValue) {
+    this.onAttributeChange(Name, oldValue, newValue)
+  }
+  
+  initialize ()   { ... }
+  
+  onConnect ()    { ... }
+  onDisconnect () { ... }
+  onAdopt ()      { ... }
+  
+  onAttributeChange (Name, oldValue, newValue) { ... }
+}
+```
 
 
 
