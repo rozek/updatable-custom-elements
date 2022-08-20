@@ -24,7 +24,7 @@ Consequently, **the following details are left untouched**:
 
 Restrictions 2 and 3 can easily be circumvented by providing redirections in the class implementation:
 
-```
+```javascript
 class updatableElement extends HTMLElement {
   constructor () {
     super()
@@ -78,7 +78,21 @@ Otherwise, load the plain script file directly
 <script src="https://unpkg.com/updatable-custom-elements"></script>
 ```
 
+## Usage ##
 
+Once loaded or imported, `updatable-custom-elements` work silently in the background - just define (and use) your "custom elements" as usual:
+
+```javascript
+class A extends HTMLElement {
+  ...
+}
+customElements.define('custom-element',A)
+
+class B extends HTMLElement {
+  ...
+}
+customElements.define('custom-element',B)
+```
 
 ## Build Instructions ##
 
