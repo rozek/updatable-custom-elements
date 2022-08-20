@@ -22,7 +22,7 @@ Consequently, **the following details are left untouched**:
 3. since the **custom element callbacks** seem to be cached internally, they **cannot be updated** as well
 4. and since the observable attributes seem to be cached as well, **changing the getter for `observedAttributes` has no effect**.
 
-Restrictions 2 and 3 can easily be circumvented by providing redirections:
+Restrictions 2 and 3 can easily be circumvented by providing redirections in the class implementation:
 
 ```
 class updatableElement extends HTMLElement {
